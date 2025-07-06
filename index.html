@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>個人介紹</title>
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+ 
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+            line-height: 1.47059;
+
+            font-weight: 400;
+
+            letter-spacing: -0.022em;
+
+            color: #1d1d1f;
+
+            background: #fff;
+
+        }
+
+ 
+
+        /* Header */
+
+        .header {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 44px;
+
+            background: rgba(255, 255, 255, 0.72);
+
+            backdrop-filter: saturate(180%) blur(20px);
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            z-index: 1000;
+
+        }
+
+ 
+
+        .header-content {
+
+            max-width: 1024px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            height: 100%;
+
+            padding: 0 22px;
+
+        }
+
+ 
+
+        .logo {
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            color: #1d1d1f;
+
+            text-decoration: none;
+
+            letter-spacing: -0.022em;
+
+        }
+
+ 
+
+        .nav {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 36px;
+
+        }
+
+ 
+
+        .nav a {
+
+            font-size: 12px;
+
+            font-weight: 400;
+
+            color: #1d1d1f;
+
+            text-decoration: none;
+
+            letter-spacing: -0.01em;
+
+            transition: color 0.3s ease;
+
+            cursor: pointer;
+
+        }
+
+ 
+
+        .nav a:hover {
+
+            color: #0066cc;
+
+        }
+
+ 
+
+        /* Hero Section */
+
+        .hero {
+
+            padding: 120px 0 80px;
+
+            text-align: center;
+
+            background: #fff;
+
+        }
+
+ 
+
+        .hero-content {
+
+            max-width: 1024px;
+
+            margin: 0 auto;
+
+            padding: 0 22px;
+
+        }
+
+ 
+
+        .hero h1 {
+
+            font-size: 56px;
+
+            line-height: 1.07143;
+
+            font-weight: 600;
+
+            letter-spacing: -0.005em;
+
+            color: #1d1d1f;
+
+            margin-bottom: 24px;
+
+        }
+
+ 
+
+        .hero .subtitle {
+
+            font-size: 28px;
+
+            line-height: 1.10722;
+
+            font-weight: 400;
+
+            letter-spacing: 0.007em;
+
+            color: #1d1d1f;
+
+            margin-bottom: 48px;
+
+        }
+
+ 
+
+        .hero .description {
+
+            font-size: 19px;
+
+            line-height: 1.42105;
+
+            font-weight: 400;
+
+            letter-spacing: 0.012em;
+
+            color: #86868b;
+
+            margin-bottom: 48px;
+
+            max-width: 600px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+ 
+
+        .cta-button {
+
+            display: inline-block;
+
+            background: #0066cc;
+
+            color: #fff;
+
+            padding: 12px 24px;
+
+            border-radius: 980px;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: 400;
+
+            letter-spacing: -0.022em;
+
+            transition: background 0.3s ease;
+
+        }
+
+ 
+
+        .cta-button:hover {
+
+            background: #0056b3;
+
+        }
+
+ 
+
+        /* Section */
+
+        .section {
+
+            padding: 80px 0;
+
+            max-width: 1024px;
+
+            margin: 0 auto;
+
+        }
+
+ 
+
+        .section-content {
+
+            padding: 0 22px;
+
+        }
+
+ 
+
+        .section-title {
+
+            font-size: 48px;
+
+            line-height: 1.08349;
+
+            font-weight: 600;
+
+            letter-spacing: -0.003em;
+
+            color: #1d1d1f;
+
+            text-align: center;
+
+            margin-bottom: 80px;
+
+        }
+
+ 
+
+        /* About Section */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+
+        }
+
+ 
+
+        .about-text {
+
+            font-size: 21px;
+
+            line-height: 1.38095;
+
+            font-weight: 400;
+
+            letter-spacing: 0.011em;
+
+            color: #1d1d1f;
+
+        }
+
+ 
+
+        .about-image {
+
+            width: 100%;
+
+            height: 400px;
+
+            background: #f5f5f7;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 17px;
+
+            color: #86868b;
+
+            letter-spacing: -0.022em;
+
+        }
+
+ 
+
+        /* Experience Section */
+
+        .experience-list {
+
+            display: grid;
+
+            gap: 48px;
+
+        }
+
+ 
+
+        .experience-item {
+
+            display: grid;
+
+            grid-template-columns: 200px 1fr;
+
+            gap: 40px;
+
+            padding: 48px 0;
+
+            border-bottom: 1px solid #d2d2d7;
+
+        }
+
+ 
+
+        .experience-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+ 
+
+        .experience-meta {
+
+            text-align: right;
+
+        }
+
+ 
+
+        .experience-year {
+
+            font-size: 14px;
+
+            color: #86868b;
+
+            font-weight: 400;
+
+            letter-spacing: -0.016em;
+
+        }
+
+ 
+
+        .experience-content h3 {
+
+            font-size: 32px;
+
+            line-height: 1.125;
+
+            font-weight: 600;
+
+            letter-spacing: 0.004em;
+
+            color: #1d1d1f;
+
+            margin-bottom: 8px;
+
+        }
+
+ 
+
+        .experience-company {
+
+            font-size: 19px;
+
+            line-height: 1.42105;
+
+            font-weight: 400;
+
+            letter-spacing: 0.012em;
+
+            color: #0066cc;
+
+            margin-bottom: 24px;
+
+        }
+
+ 
+
+        .experience-description {
+
+            font-size: 17px;
+
+            line-height: 1.47059;
+
+            font-weight: 400;
+
+            letter-spacing: -0.022em;
+
+            color: #86868b;
+
+        }
+
+ 
+
+        /* Interests Section */
+
+        .interests-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 40px;
+
+        }
+
+ 
+
+        .interest-item {
+
+            text-align: center;
+
+            padding: 48px 24px;
+
+        }
+
+ 
+
+        .interest-icon {
+
+            font-size: 64px;
+
+            margin-bottom: 24px;
+
+            display: block;
+
+        }
+
+ 
+
+        .interest-title {
+
+            font-size: 24px;
+
+            line-height: 1.16667;
+
+            font-weight: 600;
+
+            letter-spacing: 0.009em;
+
+            color: #1d1d1f;
+
+            margin-bottom: 16px;
+
+        }
+
+ 
+
+        .interest-description {
+
+            font-size: 17px;
+
+            line-height: 1.47059;
+
+            font-weight: 400;
+
+            letter-spacing: -0.022em;
+
+            color: #86868b;
+
+        }
+
+ 
+
+        /* Contact Section */
+
+        .contact {
+
+            background: #f5f5f7;
+
+            padding: 80px 0;
+
+        }
+
+ 
+
+        .contact-content {
+
+            max-width: 1024px;
+
+            margin: 0 auto;
+
+            padding: 0 22px;
+
+            text-align: center;
+
+        }
+
+ 
+
+        .contact h2 {
+
+            font-size: 48px;
+
+            line-height: 1.08349;
+
+            font-weight: 600;
+
+            letter-spacing: -0.003em;
+
+            color: #1d1d1f;
+
+            margin-bottom: 32px;
+
+        }
+
+ 
+
+        .contact-text {
+
+            font-size: 21px;
+
+            line-height: 1.38095;
+
+            font-weight: 400;
+
+            letter-spacing: 0.011em;
+
+            color: #1d1d1f;
+
+            margin-bottom: 48px;
+
+            max-width: 600px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+ 
+
+        .contact-button {
+
+            display: inline-block;
+
+            background: #0066cc;
+
+            color: #fff;
+
+            padding: 16px 32px;
+
+            border-radius: 980px;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: 400;
+
+            letter-spacing: -0.022em;
+
+            transition: background 0.3s ease;
+
+        }
+
+ 
+
+        .contact-button:hover {
+
+            background: #0056b3;
+
+        }
+
+ 
+
+        /* Footer */
+
+        .footer {
+
+            background: #1d1d1f;
+
+            color: #f5f5f7;
+
+            padding: 48px 0;
+
+            text-align: center;
+
+        }
+
+ 
+
+        .footer p {
+
+            font-size: 12px;
+
+            line-height: 1.33337;
+
+            font-weight: 400;
+
+            letter-spacing: -0.01em;
+
+            color: #86868b;
+
+        }
+
+ 
+
+        /* Responsive */
+
+        @media (max-width: 1024px) {
+
+            .section-content {
+
+                padding: 0 44px;
+
+            }
+
+           
+
+            .header-content {
+
+                padding: 0 44px;
+
+            }
+
+           
+
+            .hero-content {
+
+                padding: 0 44px;
+
+            }
+
+           
+
+            .contact-content {
+
+                padding: 0 44px;
+
+            }
+
+        }
+
+ 
+
+        @media (max-width: 768px) {
+
+            .nav {
+
+                display: none;
+
+            }
+
+           
+
+            .hero h1 {
+
+                font-size: 40px;
+
+            }
+
+           
+
+            .hero .subtitle {
+
+                font-size: 24px;
+
+            }
+
+           
+
+            .section-title {
+
+                font-size: 32px;
+
+            }
+
+           
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+           
+
+            .experience-item {
+
+                grid-template-columns: 1fr;
+
+                gap: 24px;
+
+            }
+
+           
+
+            .experience-meta {
+
+                text-align: left;
+
+            }
+
+           
+
+            .interests-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+ 
+
+        /* Smooth scrolling */
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+       
+
+        /* 確保點擊導航時考慮到固定header的高度 */
+
+        section {
+
+            scroll-margin-top: 44px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <a href="#" class="logo">個人介紹</a>
+
+            <nav>
+
+                <ul class="nav">
+
+                    <li><a href="#experience">學經歷</a></li>
+
+                    <li><a href="#interests">興趣愛好</a></li>
+
+                    <li><a href="#contact">了解更多</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+ 
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>黃柏愷 BK Huang</h1>
+
+            <p class="subtitle">個人簡介</p>
+
+            <p class="description">一不小心在金融業打滾了好多年的行銷人。</p>
+
+<div class="hero-image">
+
+                <img src="photo.jpg" alt="個人照片">
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Experience Section -->
+
+    <section id="experience" class="section">
+
+        <div class="section-content">
+
+            <h2 class="section-title">學經歷</h2>
+
+            <div class="experience-list">
+
+                <div class="experience-item">
+
+                    <div class="experience-meta">
+
+                        <p class="experience-year">2024 - 2025</p>
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <h3>企業代表</h3>
+
+                        <p class="experience-company">國泰人壽</p>
+
+                        <p class="experience-description">
+
+                            派駐北京，負責與官方、產業、學界維護關係，並協助開發潛在商業機會；平時也要針對中國保險市場、趨勢、法規做做研究。
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+ 
+
+                <div class="experience-item">
+
+                    <div class="experience-meta">
+
+                        <p class="experience-year">2016 – 2023</p>
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <h3>數位行銷PM</h3>
+
+                        <p class="experience-company">國泰世華</p>
+
+                        <p class="experience-description">
+
+                            待了7年，所以從消金業務：信用卡、支付、ATM、CSR、財管，到自媒體營運：FB、LINE、YouTube，再到品牌形象、各種行銷工作都略懂，培養了快速適應和自主學習的能力。
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+ 
+
+                <div class="experience-item">
+
+                    <div class="experience-meta">
+
+                        <p class="experience-year">2015 - 2019</p>
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <h3>外交學碩士</h3>
+
+                        <p class="experience-company">政治大學</p>
+
+                        <p class="experience-description">
+
+                            主修國際關係、國際法、戰略研究，參與多項學術研究專案，論文主題是美國對北韓外交政策研究。以上學科因為年代久遠全都忘光囉。
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Interests Section -->
+
+    <section id="interests" class="section">
+
+        <div class="section-content">
+
+            <h2 class="section-title">興趣愛好</h2>
+
+            <div class="interests-grid">
+
+                <div class="interest-item">
+
+                    <span class="interest-icon">🏸</span>
+
+                    <h3 class="interest-title">羽球</h3>
+
+                    <p class="interest-description">
+
+                        熱愛羽球，包含觀看賽事和學球、打球，享受運用羽球的複雜技巧和戰術得分的成就感。
+
+                    </p>
+
+                </div>
+
+ 
+
+                <div class="interest-item">
+
+                    <span class="interest-icon">🍿</span>
+
+                    <h3 class="interest-title">電影</h3>
+
+                    <p class="interest-description">
+
+                        喜歡科幻、劇情、喜劇、動畫類電影，學生時期跑過幾次奇幻影展刷片。
+
+                    </p>
+
+                </div>
+
+ 
+
+                <div class="interest-item">
+
+                    <span class="interest-icon">🎵</span>
+
+                    <h3 class="interest-title">音樂</h3>
+
+                    <p class="interest-description">
+
+                        業餘時間喜歡聽很chill的音樂，但對於學習樂器來說是個百年難得一見的白痴。
+
+                    </p>
+
+                </div>
+
+ 
+
+                <div class="interest-item">
+
+                    <span class="interest-icon">🏃</span>
+
+                    <h3 class="interest-title">其他運動</h3>
+
+                    <p class="interest-description">
+
+                        不定期進行跑步和健身，以及各種3分鐘熱度的體驗。
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact">
+
+        <div class="contact-content">
+
+            <h2>一個小彩蛋</h2>
+
+            <p class="contact-text">
+
+                曾經出過2張專輯，在各大音樂串流平台搜尋Gold Noise都能找到。
+
+            </p>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <p>&copy; 2025 個人介紹</p>
+
+    </footer>
+
+ 
+
+    <script>
+
+        // Smooth scrolling
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+
+                    target.scrollIntoView({
+
+                        behavior: 'smooth'
+
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
